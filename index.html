@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mouse</title>
+    <style>
+        #carre {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+        body{
+            height: 100vh;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="carre"></div>
+
+    <script>
+        let body = document.body;
+        body.addEventListener("mousemove", function (event) {
+            let positionx = event.screenX;
+            let positiony = event.screenY;
+            console.log(positionx, positiony);
+            let carre = document.querySelector("#carre");
+            carre.style.left = positionx + "px";
+            carre.style.top = positiony + "px";
+        });
+    </script>
+
+</body>
+
+</html>
